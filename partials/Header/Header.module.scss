@@ -1,0 +1,29 @@
+.header{
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    flex-grow: 1;
+
+    &>*{
+        width: 100%;
+    }
+}
+
+.header_row{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header__brand{
+    font-size: 2.5rem;
+    display: block;
+    width: auto;
+}
+
+.header__link_group{
+
+}
