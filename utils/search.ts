@@ -1,8 +1,5 @@
 import { SearchProps } from "@/types/search";
 
-/**
- * @TODO find a better way to assemble a query string
- */
 export const assembleSearchLink = (searchProps: SearchProps) => {
     let link = "/search?query=";
 
