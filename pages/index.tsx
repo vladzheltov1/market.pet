@@ -9,7 +9,7 @@ const HomePage: NextPage = () => {
                 <title>Добро пожаловать — Market.pet</title>
             </Head>
             <Page>
-                Test
+                Главная страница
             </Page>
         </>
     )

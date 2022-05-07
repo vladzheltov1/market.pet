@@ -1,6 +1,6 @@
-import { Category } from "./products"
+import { Category } from "./products";
 
 export type SearchProps = {
-    title: string,
+    query?: string,
     category?: keyof typeof Category | [keyof typeof Category][],
 }

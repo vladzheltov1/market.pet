@@ -1,7 +1,7 @@
 import { Category } from "@/types/products";
 
 export type Dict = {
-    [key in Category]: string
+    [key in keyof typeof Category]: string
 }
 
 export const category_ru: Dict = {

@@ -1,74 +1,74 @@
 import { Category, Currency, Product } from "@/types/products";
 
 export const templateProducts: Array<Product> = [
-    {
-        id: 1, 
-        title: "iPhone 13 Pro Max",
-        description: "Описание iPhone 13 Pro Max",
-        price: {value: 105999, currency: Currency.rouble},
-        category: Category.phone,
-        photos: [""],
-        colors: [
-            {lable: "Alpine Green", colorCode: "#576856"},
-            {lable: "Silver", colorCode: "#F2F3EE"},
-            {lable: "Gold", colorCode: "#FBEAD6"},
-            {lable: "Graphite", colorCode: "#62605D"},
-            {lable: "Sierra Blue", colorCode: "#ADC6DC"},
-        ],
-        features: [
-            {lable: "Внутренняя память", value: ["128Гб", "256Гб", "512Гб", "1Тб"]},
-            {lable: "Вес", value: "238г"},
-            {lable: "Дисплей", value: "OLED, диагональ 6,7 дюйма, 2778×1284 пикселя, 458 пикселей на дюйм"},
-        ]
-    },
-    {
-        id: 2,
-        title: "Sony PlayStation 5",
-        description: "Описание Sony PlayStation 5",
-        price: {value: 49999, currency: Currency.rouble},
-        category: Category.gamestation,
-        photos: [""],
-        colors: [
-            {lable: "Белый", colorCode: "#ffffff"}
-        ],
-        features: [
-            {lable: "Центральный процессор", value: "x86-64-AMD Ryzen™ “Zen 2”; 8 ядер, 16 потоков; Переменная частота до 3,5 ГГц"},
-            {lable: "Графический процессор", value: "Графический процессор на базе AMD Radeon™ RDNA 2; Ускорение трассировки лучей; Переменная частота, до 2,23 ГГц (10,3 терафлопс)"},
-            {lable: "Системная память", value: "GDDR6 16 ГБ; Пропускная способность 448 ГБ"}
-        ]
-    },
-    {
-        id: 3,
-        title: "AirPods 3",
-        description: "Описание AirPods 3",
-        price: {value: 17999, currency: Currency.rouble},
-        category: Category.headphone,
-        photos: [""],
-        colors: [
-            {lable: "Белый", colorCode: "#ffffff"}
-        ],
-        features: [
-            {lable: "Гарантия", value: "1 год"},
-            {lable: "Страна", value: "Китай"},
-            {lable: "Версия Bluetooth", value: "5.0"},
-        ]
-    },
-    {
-        id: 4,
-        title: "PlayStation DualSense Wireless Controller для PS5",
-        description: "Описание PlayStation DualSense Wireless Controller для PS5",
-        price: {value: 5999, currency: Currency.rouble},
-        category: Category.joystick,
-        photos: [""],
-        colors: [
-            {lable: "Белый", colorCode: "#ffffff"}
-        ],
-        features: [
-            {lable: "Гарантия", value: "1 год"},
-            {lable: "Страна", value: "Китай"},
-            {lable: "Интерфейс", value: "USB Type-C, mini-jack"},
-        ]
-    },
+    // {
+    //     id: 1, 
+    //     title: "iPhone 13 Pro Max",
+    //     description: "Описание iPhone 13 Pro Max",
+    //     price: {value: 105999, currency: Currency.rouble},
+    //     category: Category.phone,
+    //     photos: [""],
+    //     colors: [
+    //         {lable: "Alpine Green", colorCode: "#576856"},
+    //         {lable: "Silver", colorCode: "#F2F3EE"},
+    //         {lable: "Gold", colorCode: "#FBEAD6"},
+    //         {lable: "Graphite", colorCode: "#62605D"},
+    //         {lable: "Sierra Blue", colorCode: "#ADC6DC"},
+    //     ],
+    //     features: [
+    //         {lable: "Внутренняя память", value: ["128Гб", "256Гб", "512Гб", "1Тб"]},
+    //         {lable: "Вес", value: "238г"},
+    //         {lable: "Дисплей", value: "OLED, диагональ 6,7 дюйма, 2778×1284 пикселя, 458 пикселей на дюйм"},
+    //     ]
+    // },
+    // {
+    //     id: 2,
+    //     title: "Sony PlayStation 5",
+    //     description: "Описание Sony PlayStation 5",
+    //     price: {value: 49999, currency: Currency.rouble},
+    //     category: Category.gamestation,
+    //     photos: [""],
+    //     colors: [
+    //         {lable: "Белый", colorCode: "#ffffff"}
+    //     ],
+    //     features: [
+    //         {lable: "Центральный процессор", value: "x86-64-AMD Ryzen™ “Zen 2”; 8 ядер, 16 потоков; Переменная частота до 3,5 ГГц"},
+    //         {lable: "Графический процессор", value: "Графический процессор на базе AMD Radeon™ RDNA 2; Ускорение трассировки лучей; Переменная частота, до 2,23 ГГц (10,3 терафлопс)"},
+    //         {lable: "Системная память", value: "GDDR6 16 ГБ; Пропускная способность 448 ГБ"}
+    //     ]
+    // },
+    // {
+    //     id: 3,
+    //     title: "AirPods 3",
+    //     description: "Описание AirPods 3",
+    //     price: {value: 17999, currency: Currency.rouble},
+    //     category: Category.headphone,
+    //     photos: [""],
+    //     colors: [
+    //         {lable: "Белый", colorCode: "#ffffff"}
+    //     ],
+    //     features: [
+    //         {lable: "Гарантия", value: "1 год"},
+    //         {lable: "Страна", value: "Китай"},
+    //         {lable: "Версия Bluetooth", value: "5.0"},
+    //     ]
+    // },
+    // {
+    //     id: 4,
+    //     title: "PlayStation DualSense Wireless Controller для PS5",
+    //     description: "Описание PlayStation DualSense Wireless Controller для PS5",
+    //     price: {value: 5999, currency: Currency.rouble},
+    //     category: Category.joystick,
+    //     photos: [""],
+    //     colors: [
+    //         {lable: "Белый", colorCode: "#ffffff"}
+    //     ],
+    //     features: [
+    //         {lable: "Гарантия", value: "1 год"},
+    //         {lable: "Страна", value: "Китай"},
+    //         {lable: "Интерфейс", value: "USB Type-C, mini-jack"},
+    //     ]
+    // },
     {
         id: 5,
         title: "Клавиатура Logitech G413 Mechanical Gaming Keyboard",
@@ -76,9 +76,9 @@ export const templateProducts: Array<Product> = [
         price: {value: 6899, currency: Currency.rouble},
         category: Category.keyboard,
         photos: [
-            "https://img.mvideo.ru/Pdb/50049867b.jpg",
-            "https://img.mvideo.ru/Pdb/50049867b1.jpg",
-            "https://img.mvideo.ru/Pdb/50049867b2.jpg"
+            "/pictures/keyboard/50049867b.webp",
+            "/pictures/keyboard/50049867b1.webp",
+            "/pictures/keyboard/50049867b2.webp"
         ],
         colors: [
             {lable: "Чёрный", colorCode: "#000000"}
@@ -96,9 +96,9 @@ export const templateProducts: Array<Product> = [
         price: {value: 13499, currency: Currency.rouble},
         category: Category.monitor,
         photos: [
-            "https://img.mvideo.ru/Big/30059510bb.jpg",
-            "https://img.mvideo.ru/Big/30059510bb1.jpg",
-            "https://img.mvideo.ru/Big/30059510bb2.jpg"
+            "/pictures/monitor/30059510bb.webp",
+            "/pictures/monitor/30059510bb1.webp",
+            "/pictures/monitor/30059510bb2.webp"
         ],
         colors: [
             {lable: "Чёрный", colorCode: "#000000"}
@@ -116,9 +116,9 @@ export const templateProducts: Array<Product> = [
         price: {value: 80999, currency: Currency.rouble},
         category: Category.tablet,
         photos: [
-            "https://img.mvideo.ru/Big/30053003bb.jpg",
-            "https://img.mvideo.ru/Big/30053003bb1.jpg",
-            "https://img.mvideo.ru/Big/30053003bb7.jpg"
+            "/pictures/tablet/30053003bb.webp",
+            "/pictures/tablet/30053003bb1.webp",
+            "/pictures/tablet/30053003bb7.webp"
         ],
         colors: [
             {lable: "Голубое небо", colorCode: "#65C8FF"},

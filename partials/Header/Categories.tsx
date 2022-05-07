@@ -6,7 +6,7 @@ import { FC } from "react";
 export const HeaderCategories: FC = () => {
     return <>
         {Object.keys(category_ru).map(key => (
-            <Link href={assembleShopSearchLink({title: "", category: key})} key={key}><a>{category_ru[key]}</a></Link>
+            <Link href={assembleShopSearchLink({category: key})} key={key}><a>{category_ru[key]}</a></Link>
         ))}
     </>
 }
