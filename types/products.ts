@@ -19,10 +19,26 @@ export type Price = {
     currency: Currency
 }
 
+export type ProductColor = {
+    /**
+     * HEX/RGB
+     */
+    colorCode: string
+    lable: string,
+}
+
+export type ProductFeature = {
+    lable: string,
+    value: string | Array<string>
+}
+
 export type Product = {
     id: number | string,
     title: string,
     description: string,
     category: Category,
-    price: Price
+    photos: Array<string>,
+    price: Price,
+    colors: Array<ProductColor>,
+    features: Array<ProductFeature>
 }

@@ -8,7 +8,7 @@ export const HeaderDropdown: FC<IHeaderDropdownProps> = (props) => {
     return (
         <Nav>
             <NavDropdown
-                title={"Hello, username!"}
+                title={"Профиль"}
                 className={headerStyles.header__dropdown}
             >
                 <NavDropdown.Item href="/test1">Action</NavDropdown.Item>

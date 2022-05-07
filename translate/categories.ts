@@ -1,6 +1,10 @@
 import { Category } from "@/types/products";
 
-export const category_ru: {[key in Category]: string} = {
+export type Dict = {
+    [key in Category]: string
+}
+
+export const category_ru: Dict = {
     phone: "Смартфоны",
     gamestation: "Консоли",
     headphone: "Наушники",

@@ -1,3 +1,7 @@
+import { Icon } from "@/components/UI/Icon";
+import { assembleShopSearchLink } from "@/utils/search";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 import { FC, MouseEventHandler, useState } from "react";
 import { Button, FormControl, InputGroup } from "react-bootstrap";
 import headerStyles from "./Header.module.scss";
@@ -5,17 +9,19 @@ import headerStyles from "./Header.module.scss";
 export interface IHeaderSearchProps {};
 
 export const HeaderSearch: FC<IHeaderSearchProps> = (props) => {
-    const [value, setValue] = useState(""); 
+    const [value, setValue] = useState<string>(""); 
+
+    const router = useRouter();
 
     const handleClick: MouseEventHandler = () => {
-        console.log(value);
+        router.push(assembleShopSearchLink({title: value}));
     }
 
     return (
         <InputGroup>
             <FormControl
                 type="search"
-                placeholder="Search"
+                placeholder="Поиск"
                 className={headerStyles.header__search}
                 onChange={event => setValue(event.target.value)}
                 value={value}
@@ -25,7 +31,7 @@ export const HeaderSearch: FC<IHeaderSearchProps> = (props) => {
                 className={headerStyles.header__search_button}
                 onClick={handleClick}
             >
-                Search
+                <Icon icon={faSearch} />
             </Button>
         </InputGroup>
     )

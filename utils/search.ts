@@ -1,7 +1,7 @@
 import { SearchProps } from "@/types/search";
 
-export const assembleSearchLink = (searchProps: SearchProps) => {
-    let link = "/search?query=";
+export const assembleShopSearchLink = (searchProps: SearchProps) => {
+    let link = "/shop?query=";
 
     if(searchProps.title){
         link += searchProps.title;
@@ -11,4 +11,9 @@ export const assembleSearchLink = (searchProps: SearchProps) => {
     }
 
     return link;
+}
+
+
+export const filterList = <T>(data: Array<T>, condition: {[key in keyof T]: string | number}) => {
+    
 }

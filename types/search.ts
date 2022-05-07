@@ -2,5 +2,5 @@ import { Category } from "./products"
 
 export type SearchProps = {
     title: string,
-    category: keyof typeof Category,
+    category?: keyof typeof Category | [keyof typeof Category][],
 }
