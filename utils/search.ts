@@ -12,26 +12,16 @@ export const assembleShopSearchLink = (searchProps: SearchProps) => {
     return link;
 }
 
-export type SearchCondition<T> = {
-    [key in keyof T]: string | number
-}
+/**
+ * Function that finds and returns ALL fields, which keys match the condition
+ * @param data data array of type `T` which containts the list to search in 
+ * @param conditions is an object of conditions
+ */
+export const filterList = <T>(data: Array<T>, conditions: SearchCondition<T>) => {}
 
-export const filterList = <T>(data: Array<T>, conditions: SearchCondition<T>) => {
-    
-}
-
-export const findOne = <T>(data: Array<T>, condition: SearchCondition<T>) => {
-    const result = data.map(item => {
-        let flag = true;
-        for(let key in condition){
-            if(item[key] !== condition[key]){
-                flag = false;
-            }
-        }
-        if(flag){
-            return item;
-        }
-    });
-
-    return result;
-}
+/**
+ * Function that finds and returns ONE single field, which keys match the condition (if there's more than one, returns the first)  
+ * @param {Array<T>} data array of type `T` which containts the list to search in 
+ * @param {SearchCondition<T>} conditions is an object of conditions
+ */
+export const findOne = <T>(data: Array<T>, conditions: SearchCondition<T>) => {}
