@@ -1,15 +1,12 @@
 import { Category } from "@/types/products";
+import { Dictionary } from "@/types/translate";
 
-export type Dict = {
-    [key in keyof typeof Category]: string
-}
-
-export const category_ru: Dict = {
+export const category_ru: Dictionary<Category> = {
     phone: "Смартфоны",
     gamestation: "Консоли",
     headphone: "Наушники",
     joystick: "Джойстики",
     keyboard: "Клавиатуры",
     monitor: "Мониторы",
-    tablet: "Планшеты"
+    tablet: "Плашнеты"
 }
