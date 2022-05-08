@@ -1,5 +1,5 @@
 export type SearchQuery = {
-    [key: string]: string | number | Array<string | number>
+    [key: string]: string | number
 }
 
 export type SearchCondition<T> = {
