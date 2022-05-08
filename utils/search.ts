@@ -1,16 +1,4 @@
-import { SearchCondition, SearchProps } from "@/types/search";
-
-export const assembleShopSearchLink = (searchProps: SearchProps) => {
-    let link = "/shop?";
-
-    for(let key in searchProps){
-        if(searchProps[key]){
-            link += key + "=" + searchProps[key] + "&";
-        }
-    }
-
-    return link;
-}
+import { SearchCondition } from "@/types/search";
 
 /**
  * Function that finds and returns ALL fields, which keys match the condition

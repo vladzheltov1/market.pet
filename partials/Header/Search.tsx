@@ -1,5 +1,5 @@
 import { Icon } from "@/components/UI/Icon";
-import { assembleShopSearchLink } from "@/utils/search";
+import { assembleLink } from "@/utils/redirect";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 import { FC, MouseEventHandler, useState } from "react";
@@ -14,7 +14,9 @@ export const HeaderSearch: FC<IHeaderSearchProps> = (props) => {
     const router = useRouter();
 
     const handleClick: MouseEventHandler = () => {
-        router.push(assembleShopSearchLink({title: value}));
+        if(value.length > 0){
+            router.push(assembleLink("/shop", {title: value}));
+        }
     }
 
     return (
