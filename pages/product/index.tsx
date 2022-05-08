@@ -4,8 +4,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 
-const Product: FC = () => {    
-    const [product, setProduct] = useState(null);
+const ProductPage: FC = () => {
+    const [product, setProduct] = useState<Product | null>(null);
 
     const router = useRouter();
 
@@ -18,14 +18,10 @@ const Product: FC = () => {
         }
     }, [])
 
-    useEffect(() => {
-        console.log(product);
-    }, [product])
-
     return (
         <>  
             <Head>
-                <title></title>
+                <title>{}</title>
             </Head>
             <Page>
                 Test 
@@ -34,4 +30,4 @@ const Product: FC = () => {
     )
 }
 
-export default Product;
+export default ProductPage;
