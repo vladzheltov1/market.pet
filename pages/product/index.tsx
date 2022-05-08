@@ -17,9 +17,7 @@ const ProductPage: FC = () => {
     }
 
     useEffect(() => {
-
         const queryId = router.query["id"];
-
         const productId = Array.isArray(queryId) ? queryId[0] : queryId; 
 
         if(!productId){
