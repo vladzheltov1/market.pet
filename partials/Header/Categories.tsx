@@ -1,4 +1,4 @@
-import { category_ru } from "@/translate/categories";
+import { category_ru } from "@/dictionary/categories";
 import { assembleLink } from "@/utils/redirect";
 import Link from "next/link";
 import { FC } from "react";
