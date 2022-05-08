@@ -1,4 +1,4 @@
-import { SearchProps } from "@/types/search";
+import { SearchCondition, SearchProps } from "@/types/search";
 
 export const assembleShopSearchLink = (searchProps: SearchProps) => {
     let link = "/shop?";
