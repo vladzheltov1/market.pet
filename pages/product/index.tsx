@@ -1,5 +1,8 @@
+import { templateProducts } from "@/database/products";
 import { Page } from "@/layouts/Page";
 import { Product } from "@/types/products";
+import { findOne } from "@/utils/search";
+import { assemblePageTitle } from "@/utils/title";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
@@ -9,23 +12,42 @@ const ProductPage: FC = () => {
 
     const router = useRouter();
 
+    const redirect = () => {
+        router.push("/shop");
+    }
+
     useEffect(() => {
-        const productId = router.query["id"];
+
+        const queryId = router.query["id"];
+
+        const productId = Array.isArray(queryId) ? queryId[0] : queryId; 
 
         if(!productId){
-            router.push("/shop");
+            redirect();
             return;
         }
+
+        const productByQuery = findOne<Product>(templateProducts, {id: parseInt(productId)});
+
+        if(!productByQuery){
+            redirect();
+        }
+
+        setProduct(productByQuery);
     }, [])
 
     return (
         <>  
-            <Head>
-                <title>{}</title>
-            </Head>
-            <Page>
-                Test 
-            </Page>
+            {product && (
+                <>
+                    <Head>
+                        <title>{assemblePageTitle(product.title)}</title>
+                    </Head>
+                    <Page>
+                        {product.title}
+                    </Page>
+                </>
+            )}
         </>
     )
 }

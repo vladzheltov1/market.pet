@@ -1,4 +1,5 @@
 import { Page } from '@/layouts/Page';
+import { assemblePageTitle } from '@/utils/title';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -6,7 +7,7 @@ const HomePage: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Добро пожаловать — Market.pet</title>
+                <title>{assemblePageTitle("Добро пожаловать")}</title>
             </Head>
             <Page>
                 Главная страница
