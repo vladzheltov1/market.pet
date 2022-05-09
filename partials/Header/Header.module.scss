@@ -76,3 +76,32 @@
     font-size: 15px;
     padding: 0;
 }
+
+.search_block{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.auto_complete_container{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    z-index: 100;
+    border-radius: 0.5rem;
+    border: 1px solid var(--bs-gray-200);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.autoComplete_link{
+    font-size: 14px;
+}
+
+.autoComplete_link.direct_link{
+    color: var(--bs-blue) !important;
+    font-weight: 500;
+}
