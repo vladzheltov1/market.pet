@@ -1,0 +1,1 @@
+export const USER_DEFAULT_AVATAR: string = "/pictures/avatars/default.png";
