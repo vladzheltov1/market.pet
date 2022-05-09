@@ -32,8 +32,10 @@ export type ProductFeature = {
     value: string | Array<string>
 }
 
+export type ProductID = number | string;
+
 export type Product = {
-    id: number | string,
+    id: ProductID,
     title: string,
     description: string,
     category: Category,
