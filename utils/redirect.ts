@@ -7,8 +7,7 @@ import { NextRouter } from "next/router";
  * @param {SearchQuery} query query params 
  * @example
  * ```
- * const url = assembleLink("/shop", {title: "iphone", category: "phone"});
- * console.log(url) -> "/shop?title=iphone&category=phone"
+ * assembleLink("/shop", {title: "iphone", category: "phone"}) => "/shop?title=iphone&category=phone"
  * ```
  * @returns {string} URL
  */
