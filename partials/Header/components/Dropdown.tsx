@@ -2,6 +2,19 @@ import { FC } from "react";
 import { Nav, NavDropdown } from "react-bootstrap";
 import headerStyles from "../Header.module.scss";
 
+type DropdownListItem = {
+    label: string,
+    href: string,
+    isDivider: boolean
+}
+
+const dropdownListItems: Array<DropdownListItem> = [
+    {label: "Мой профиль", href: "/profile", isDivider: false},
+    {label: "Избранное", href: "/wish", isDivider: false},
+    {label: "", href: "", isDivider: true},
+    {label: "Выход", href: "/user/unlog", isDivider: false},
+]
+
 export const HeaderDropdown: FC = () => {
     return (
         <Nav>
@@ -9,10 +22,15 @@ export const HeaderDropdown: FC = () => {
                 title={"Профиль"}
                 className={headerStyles.header__dropdown}
             >
-                <NavDropdown.Item href="/profile">Мой профиль</NavDropdown.Item>
-                <NavDropdown.Item href="/wish">Избранное</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/user/unlog">Выход</NavDropdown.Item>
+                {dropdownListItems.map(item => (
+                    <>
+                        {item.isDivider ? (
+                            <NavDropdown.Divider />
+                        ) : (
+                            <NavDropdown.Item className={headerStyles.header__dropdown__item} href={item.href}>{item.label}</NavDropdown.Item>
+                        )}
+                    </>
+                ))}
             </NavDropdown>
         </Nav>
     )

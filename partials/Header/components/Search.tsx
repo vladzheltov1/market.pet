@@ -19,8 +19,8 @@ export const HeaderSearch: FC = () => {
     }
 
     return (
-        <div className={headerStyles.search_block}>
-            <InputGroup className={headerStyles.search_block__input}>
+        <div className={headerStyles.header__search}>
+            <InputGroup>
                 <FormControl
                     type="search"
                     placeholder="Поиск"
