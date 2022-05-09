@@ -8,5 +8,5 @@ export const category_ru: Dictionary<Category> = {
     joystick: "Джойстики",
     keyboard: "Клавиатуры",
     monitor: "Мониторы",
-    tablet: "Плашнеты"
+    tablet: "Планшеты"
 }
