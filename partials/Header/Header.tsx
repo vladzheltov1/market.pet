@@ -1,15 +1,15 @@
 import { Wrapper } from "@/components/Wrapper";
 import { faBasketShopping, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FC } from "react";
-import { HeaderBrand } from "./Brand";
-import { HeaderCategories } from "./Categories";
-import { HeaderDropdown } from "./Dropdown";
+import { HeaderBrand } from "./components/Brand";
+import { HeaderCategories } from "./components/Categories";
+import { HeaderDropdown } from "./components/Dropdown";
+import { HeaderRow } from "./components/HeaderRow";
+import { HeaderLink } from "./components/Link";
+import { HeaderSearch } from "./components/Search";
 import headerStyles from "./Header.module.scss";
-import { HeaderRow } from "./HeaderRow";
-import { HeaderLink } from "./Link";
-import { HeaderSearch } from "./Search";
 
-export const Header: FC = (props) => {
+export const Header: FC = () => {
     return (
         <div className={headerStyles.header}>
             <Wrapper>
