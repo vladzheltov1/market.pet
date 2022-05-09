@@ -1,6 +1,7 @@
 import { templateProducts } from "@/database/products";
 import { Page } from "@/layouts/Page";
 import { Product } from "@/types/products";
+import { redirect } from "@/utils/redirect";
 import { findOne } from "@/utils/search";
 import { assemblePageTitle } from "@/utils/title";
 import Head from "next/head";
@@ -12,23 +13,19 @@ const ProductPage: FC = () => {
 
     const router = useRouter();
 
-    const redirect = () => {
-        router.push("/shop");
-    }
-
     useEffect(() => {
         const queryId = router.query["id"];
         const productId = Array.isArray(queryId) ? queryId[0] : queryId; 
 
         if(!productId){
-            redirect();
+            redirect("/shop", router);
             return;
         }
-
+        
         const productByQuery = findOne<Product>(templateProducts, {id: parseInt(productId)});
-
+        
         if(!productByQuery){
-            redirect();
+            redirect("/shop", router);
         }
 
         setProduct(productByQuery);
