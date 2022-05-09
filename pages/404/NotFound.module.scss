@@ -1,0 +1,21 @@
+.not_found {
+    &__container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        width: 100%;
+    }
+
+    &__code{
+        font-size: 5rem;
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+    }
+    
+    &__description{
+        margin-top: -25px;
+    }
+}
