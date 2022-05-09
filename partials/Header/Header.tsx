@@ -1,4 +1,4 @@
-import { Wrapper } from "@/partials/Wrapper";
+import { Wrapper } from "@/components/Wrapper";
 import { faBasketShopping, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FC } from "react";
 import { HeaderBrand } from "./Brand";
