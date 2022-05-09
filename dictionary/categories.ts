@@ -1,5 +1,5 @@
+import { Dictionary } from "@/types/dictionary";
 import { Category } from "@/types/products";
-import { Dictionary } from "@/types/translate";
 
 export const category_ru: Dictionary<Category> = {
     phone: "Смартфоны",
