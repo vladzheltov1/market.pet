@@ -22,14 +22,19 @@ export const HeaderDropdown: FC = () => {
                 title={"Профиль"}
                 className={headerStyles.header__dropdown}
             >
-                {dropdownListItems.map(item => (
-                    <>
+                {dropdownListItems.map((item, idx) => (
+                    <div key={idx}>
                         {item.isDivider ? (
                             <NavDropdown.Divider />
                         ) : (
-                            <NavDropdown.Item className={headerStyles.header__dropdown__item} href={item.href}>{item.label}</NavDropdown.Item>
+                            <NavDropdown.Item 
+                                className={headerStyles.header__dropdown__item} 
+                                href={item.href}
+                            >
+                                {item.label}
+                            </NavDropdown.Item>
                         )}
-                    </>
+                    </div>
                 ))}
             </NavDropdown>
         </Nav>
