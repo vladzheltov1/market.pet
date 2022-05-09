@@ -1,4 +1,5 @@
 import { SearchQuery } from "@/types/search";
+import { NextRouter } from "next/router";
 
 /**
  * Function that assembles the URL with query params
@@ -26,3 +27,10 @@ import { SearchQuery } from "@/types/search";
     
     return searchLink;
 }
+
+/**
+ * @param {string} url 
+ * @param {NextRouter} router 
+ * @returns {Promise<boolean>}
+ */
+export const redirect = (url: string, router: NextRouter): Promise<boolean> => router.push(url);
