@@ -12,7 +12,7 @@ const dropdownListItems: Array<DropdownListItem> = [
     {label: "Мой профиль", href: "/profile", isDivider: false},
     {label: "Избранное", href: "/wish", isDivider: false},
     {label: "", href: "", isDivider: true},
-    {label: "Выход", href: "/user/unlog", isDivider: false},
+    {label: "Выход", href: "/user/logout", isDivider: false},
 ]
 
 export const HeaderDropdown: FC = () => {
