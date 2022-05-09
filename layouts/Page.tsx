@@ -1,5 +1,5 @@
+import { Wrapper } from "@/components/Wrapper";
 import { Header } from "@/partials/Header";
-import { Wrapper } from "@/partials/Wrapper";
 import { ILayoutProps } from "@/types/layouts";
 import { FC } from "react";
 

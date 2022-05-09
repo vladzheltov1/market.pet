@@ -18,11 +18,12 @@
     "paths": {
       "@/components/*": ["./components/*"],
       "@/constants/*": ["./constants/*"],
+      "@/database/*": ["./database/*"],
+      "@/dictionary/*": ["./dictionary/*"],
       "@/hooks/*": ["./hooks/*"],
       "@/layouts/*": ["./layouts/*"],
       "@/partials/*": ["./partials/*"],
       "@/styles/*": ["./styles/*"],
-      "@/translate/*": ["./translate/*"],
       "@/types/*": ["./types/*"],
       "@/utils/*": ["./utils/*"],
     }

@@ -1,6 +1,7 @@
-import { Category } from "./products"
+export type SearchQuery = {
+    [key: string]: string | number
+}
 
-export type SearchProps = {
-    title: string,
-    category: keyof typeof Category,
+export type SearchCondition<T> = {
+    [key in keyof T]: string | number
 }

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import headerStyles from "./Header.module.scss";
+import { FC } from "react";
+import headerStyles from "../Header.module.scss";
 
-export const HeaderBrand = () => {
+export const HeaderBrand: FC = () => {
     return (
         <Link href="/">
             <a>

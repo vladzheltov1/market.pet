@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import headerStyles from "./Header.module.scss";
+import headerStyles from "../Header.module.scss";
 
 export interface IHeaderRowProps {
     className?: string,

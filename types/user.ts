@@ -1,0 +1,21 @@
+export type UserID = number; 
+
+export enum UserRoles {
+    USER,
+    MODERATOR,
+    ADMIN,
+    OWNER
+}
+
+export type User = {
+    id: UserID,
+    firstName: string,
+    lastName: string,
+    age: number,
+    email: string,
+    login: string,
+    password: string,
+    joined: Date,
+    role: UserRoles,
+    avatar: string
+}
