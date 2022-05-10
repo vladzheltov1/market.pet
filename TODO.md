@@ -7,8 +7,8 @@
   - /search
   - /cart
   - /purchases
-  - /profile
   - /wish
+  - /user
   - /user/login/
   - /user/signup/
   - /user/logout/
