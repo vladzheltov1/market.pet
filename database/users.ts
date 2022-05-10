@@ -12,7 +12,8 @@ export const templateUsers: Array<User> = [
         password: "vlad",
         joined: new Date(),
         role: UserRoles.OWNER,
-        avatar: USER_DEFAULT_AVATAR
+        avatar: USER_DEFAULT_AVATAR,
+        wishList: []
     },
     {
         id: 1,
@@ -24,7 +25,8 @@ export const templateUsers: Array<User> = [
         password: "admin",
         joined: new Date(),
         role: UserRoles.ADMIN,
-        avatar: USER_DEFAULT_AVATAR
+        avatar: USER_DEFAULT_AVATAR,
+        wishList: []
     },
     {
         id: 2,
@@ -36,7 +38,8 @@ export const templateUsers: Array<User> = [
         password: "moder",
         joined: new Date(),
         role: UserRoles.MODERATOR,
-        avatar: USER_DEFAULT_AVATAR
+        avatar: USER_DEFAULT_AVATAR,
+        wishList: []
     },
     {
         id: 3,
@@ -48,6 +51,7 @@ export const templateUsers: Array<User> = [
         password: "test",
         joined: new Date(),
         role: UserRoles.USER,
-        avatar: USER_DEFAULT_AVATAR
+        avatar: USER_DEFAULT_AVATAR,
+        wishList: []
     }
 ];
