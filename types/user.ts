@@ -15,7 +15,6 @@ export type User = {
     lastName: string,
     age: number,
     email: string,
-    login: string,
     password: string,
     joined: Date,
     role: UserRoles,
