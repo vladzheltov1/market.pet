@@ -7,10 +7,10 @@ export interface IWrapperProps {
 }
 
 export const Wrapper: FC<IWrapperProps> = (props) => {
-    const {children} = props as IWrapperProps;
+    const {children, maxWidth} = props as IWrapperProps;
 
     return (
-        <div className={wrapperStyles.wrapper}>
+        <div className={wrapperStyles.wrapper} style={{maxWidth}}>
             {children}
         </div>
     )
