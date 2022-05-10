@@ -1,3 +1,4 @@
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { FC } from "react";
 import { Nav, NavDropdown } from "react-bootstrap";
 import headerStyles from "../Header.module.scss";
@@ -8,14 +9,22 @@ type DropdownListItem = {
     isDivider: boolean
 }
 
-const dropdownListItems: Array<DropdownListItem> = [
-    {label: "Мой профиль", href: "/profile", isDivider: false},
+const loggedInUser: Array<DropdownListItem> = [
+    {label: "Мой профиль", href: "/user", isDivider: false},
     {label: "Избранное", href: "/wish", isDivider: false},
     {label: "", href: "", isDivider: true},
     {label: "Выход", href: "/user/logout", isDivider: false},
+];
+
+const unloggedUser: Array<DropdownListItem> = [
+    {label: "Зарегистрироваться", href: "/user/signup/", isDivider: false},
+    {label: "Войти", href: "/user/login/", isDivider: false},
 ]
 
 export const HeaderDropdown: FC = () => {
+    const localStore = useLocalStorage();
+    const dropdownListItems: Array<DropdownListItem> = localStore.get("user") ? loggedInUser : unloggedUser;
+
     return (
         <Nav>
             <NavDropdown
