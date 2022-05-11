@@ -1,7 +1,7 @@
 export enum Category {
     phone = "phone",
     tablet = "tablet",
-    headphone = "headphone",
+    headphones = "headphones",
     keyboard = "keyboard",
     monitor = "monitor",
     gamestation = "gamestation",
