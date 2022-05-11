@@ -1,6 +1,6 @@
 import { Wrapper } from "@/components/Wrapper";
+import { INCORRECT_EMAIL, REQUIRED } from "@/constants/form";
 import { useAuth } from "@/hooks/useAuth";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { Page } from "@/layouts/Page";
 import { FormResponse, LoginUserData } from "@/types/auth";
 import { assemblePageTitle } from "@/utils/title";
@@ -11,11 +11,9 @@ import { FC, useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import * as yup from "yup";
 
-const required = "Обязательное поле!";
-
 const schema = yup.object().shape({
-    email: yup.string().email("Некорректный адрес!").required(required),
-    password: yup.string().required(required)
+    email: yup.string().email(INCORRECT_EMAIL).required(REQUIRED),
+    password: yup.string().required(REQUIRED)
 });
 
 const initialValues: LoginUserData = {
@@ -25,8 +23,7 @@ const initialValues: LoginUserData = {
 
 const Login: FC = () => {
     const router = useRouter();
-    const localStore = useLocalStorage();
-    const {login} = useAuth();
+    const {login, isLoggedIn} = useAuth();
 
     const [error, setError] = useState<FormResponse | null>(null);
 
@@ -42,10 +39,12 @@ const Login: FC = () => {
     }
 
     useEffect(() => {
-        if(localStore.get("user")){
+        if(isLoggedIn()){
             router.push("/");
             return;
         }
+        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -69,7 +68,7 @@ const Login: FC = () => {
                             <Form noValidate onSubmit={handleSubmit}>
                                 <h1>Вход</h1>
                                 <Form.Group controlId="email">
-                                    <Form.Label>Почта</Form.Label>
+                                    <Form.Label>Почта:</Form.Label>
                                     <Form.Control
                                         type="email"
                                         placeholder="Почта"
@@ -83,7 +82,7 @@ const Login: FC = () => {
                                     </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group controlId="password">
-                                    <Form.Label>Пароль</Form.Label>
+                                    <Form.Label>Пароль:</Form.Label>
                                     <Form.Control
                                         type="password"
                                         placeholder="Пароль"

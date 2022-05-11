@@ -1,19 +1,19 @@
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useAuth } from "@/hooks/useAuth";
 import { Page } from "@/layouts/Page";
 import { useRouter } from "next/router";
 import { FC, useEffect } from "react";
 
 const Logout: FC = () => {
     const router = useRouter();
-    const localStore = useLocalStorage();
+    const {logOut} = useAuth();
 
     useEffect(() => {
-        localStore.remove("user");
+        logOut();
         router.push("/");
-    }, []);
+    });
 
     return <Page>
-        <div></div>
+        <div>Пожалуйста, подождите!</div>
     </Page>
 }
 

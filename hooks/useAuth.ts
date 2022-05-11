@@ -1,5 +1,5 @@
 import { templateUsers } from "@/database/users";
-import { FormResponse, LoginUserData } from "@/types/auth";
+import { FormResponse, LoginUserData, SignUpUserData } from "@/types/auth";
 import { User } from "@/types/user";
 import { findOne } from "@/utils/search";
 import { useLocalStorage } from "./useLocalStorage";
@@ -26,5 +26,39 @@ export const useAuth = () => {
         return FormResponse.SUCCESS;
     }
 
-    return {login};
+    /**
+     * This function does not actually add new users to database, it basically works as a validator cause there's no server :)
+     * @param userData 
+     * @returns 
+     */
+    const signUp = (userData: SignUpUserData): FormResponse => {
+        const {email, password, passwordConfirm} = userData;
+
+        const alreadyExists = !!findOne<User>(templateUsers, {email});
+
+        if(alreadyExists){
+            return FormResponse.ALREADY_EXISTS;
+        }
+
+        if(password.trim() !== passwordConfirm.trim()){
+            return FormResponse.PASSWORDS_DONT_MATCH;
+        }
+
+        return FormResponse.SUCCESS;
+    }
+
+    const logOut = (): void => {
+        localStore.remove("user");
+    }
+
+    const isLoggedIn = (): boolean => {
+        return !!localStore.get("user");
+    }
+
+    return {
+        login,
+        signUp,
+        logOut,
+        isLoggedIn
+    };
 }
