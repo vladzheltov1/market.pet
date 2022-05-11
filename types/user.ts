@@ -19,5 +19,6 @@ export type User = {
     joined: Date,
     role: UserRoles,
     avatar: string,
-    wishList: Array<Product>
+    wishList: Array<Product>,
+    cart: Array<Product>
 }

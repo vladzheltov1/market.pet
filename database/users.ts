@@ -12,7 +12,8 @@ export const templateUsers: Array<User> = [
         joined: new Date(),
         role: UserRoles.OWNER,
         avatar: USER_DEFAULT_AVATAR,
-        wishList: []
+        wishList: [],
+        cart: []
     },
     {
         id: 1,
@@ -24,7 +25,8 @@ export const templateUsers: Array<User> = [
         joined: new Date(),
         role: UserRoles.ADMIN,
         avatar: USER_DEFAULT_AVATAR,
-        wishList: []
+        wishList: [],
+        cart: []
     },
     {
         id: 2,
@@ -36,7 +38,8 @@ export const templateUsers: Array<User> = [
         joined: new Date(),
         role: UserRoles.MODERATOR,
         avatar: USER_DEFAULT_AVATAR,
-        wishList: []
+        wishList: [],
+        cart: []
     },
     {
         id: 3,
@@ -48,6 +51,7 @@ export const templateUsers: Array<User> = [
         joined: new Date(),
         role: UserRoles.USER,
         avatar: USER_DEFAULT_AVATAR,
-        wishList: []
+        wishList: [],
+        cart: []
     }
 ];
