@@ -1,5 +1,5 @@
 import { Wrapper } from "@/components/Wrapper";
-import { faBasketShopping, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faBasketShopping, faShop } from "@fortawesome/free-solid-svg-icons";
 import { FC } from "react";
 import { HeaderBrand } from "./components/Brand";
 import { HeaderCategories } from "./components/Categories";
@@ -17,8 +17,8 @@ export const Header: FC = () => {
                     <HeaderBrand />
                     <HeaderSearch />
                     <div className={headerStyles.header__link_group}>
-                        <HeaderLink href="/cart" icon={faCartShopping}>Корзина</HeaderLink>
-                        <HeaderLink href="/purchases" icon={faBasketShopping}>Заказы</HeaderLink>
+                        <HeaderLink href="/shop" icon={faShop}>Магазин</HeaderLink>
+                        <HeaderLink href="/cart" icon={faBasketShopping}>Корзина</HeaderLink>
                     </div>
                     <HeaderDropdown />
                 </HeaderRow>

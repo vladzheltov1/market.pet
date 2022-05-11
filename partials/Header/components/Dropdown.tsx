@@ -12,6 +12,7 @@ type DropdownListItem = {
 const loggedInUser: Array<DropdownListItem> = [
     {label: "Мой профиль", href: "/user", isDivider: false},
     {label: "Избранное", href: "/wish", isDivider: false},
+    {label: "Заказы", href: "/purchases", isDivider: false},
     {label: "", href: "", isDivider: true},
     {label: "Выход", href: "/user/logout", isDivider: false},
 ];
