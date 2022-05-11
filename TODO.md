@@ -3,6 +3,7 @@
 - Complete products database list: find good photos
 - Fill `purchases` database
 - Pages todo:
+  - /
   - /product
   - /search
   - /cart
