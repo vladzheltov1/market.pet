@@ -9,6 +9,3 @@
   - /purchases
   - /wish
   - /user
-  - /user/login/
-  - /user/signup/
-  - /user/logout/
