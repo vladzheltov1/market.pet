@@ -24,11 +24,11 @@ export type ProductColor = {
      * HEX/RGB
      */
     colorCode: string
-    lable: string,
+    label: string,
 }
 
 export type ProductFeature = {
-    lable: string,
+    label: string,
     value: string | Array<string>
 }
 
