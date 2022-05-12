@@ -8,20 +8,20 @@ export const useAuth = () => {
     const localStore = useLocalStorage();
 
     const login = (userData: LoginUserData): FormResponse => {
-        const {email, password} = userData;
-        const conditions = {email};
+        const { email, password } = userData;
+        const conditions = { email };
 
         const candidate = findOne<User>(templateUsers, conditions);
 
-        if(!candidate){
+        if (!candidate) {
             return FormResponse.USER_NOT_FOUND;
         }
 
-        if(candidate.password.trim() !== password.trim()){
+        if (candidate.password.trim() !== password.trim()) {
             return FormResponse.WRONG_PASSWORD;
         }
 
-        localStore.add("user", JSON.stringify({id: candidate.id}));
+        localStore.add("user", JSON.stringify({ id: candidate.id }));
 
         return FormResponse.SUCCESS;
     }
@@ -32,15 +32,15 @@ export const useAuth = () => {
      * @returns 
      */
     const signUp = (userData: SignUpUserData): FormResponse => {
-        const {email, password, passwordConfirm} = userData;
+        const { email, password, passwordConfirm } = userData;
 
-        const alreadyExists = !!findOne<User>(templateUsers, {email});
+        const alreadyExists = !!findOne<User>(templateUsers, { email });
 
-        if(alreadyExists){
+        if (alreadyExists) {
             return FormResponse.ALREADY_EXISTS;
         }
 
-        if(password.trim() !== passwordConfirm.trim()){
+        if (password.trim() !== passwordConfirm.trim()) {
             return FormResponse.PASSWORDS_DONT_MATCH;
         }
 

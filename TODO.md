@@ -2,6 +2,7 @@
 
 - Fill `purchases` database
 - Make filter at `/shop`
+- Redesign product tiles as `/shop`
 - Pages todo:
   - /product
   - /search
