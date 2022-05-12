@@ -1,3 +1,4 @@
+import { PRODUCT_IMAGES } from "@/constants/paths";
 import { Category, Currency, Product } from "@/types/products";
 
 export const templateProducts: Array<Product> = [
@@ -8,9 +9,9 @@ export const templateProducts: Array<Product> = [
         price: { value: 105999, currency: Currency.rouble },
         category: Category.phone,
         photos: [
-            "/pictures/phone/iphone13.webp",
-            "/pictures/phone/iphone13(1).webp",
-            "/pictures/phone/iphone13(2).webp",
+            PRODUCT_IMAGES + "/phone/iphone13.webp",
+            PRODUCT_IMAGES + "/phone/iphone13(1).webp",
+            PRODUCT_IMAGES + "/phone/iphone13(2).webp",
         ],
         colors: [
             { label: "Alpine Green", colorCode: "#576856" },
@@ -32,7 +33,7 @@ export const templateProducts: Array<Product> = [
         price: { value: 49999, currency: Currency.rouble },
         category: Category.gamestation,
         photos: [
-            "/pictures/gamestation/40078212b.webp"
+            PRODUCT_IMAGES + "/gamestation/40078212b.webp"
         ],
         colors: [
             { label: "Белый", colorCode: "#ffffff" }
@@ -50,8 +51,8 @@ export const templateProducts: Array<Product> = [
         price: { value: 17999, currency: Currency.rouble },
         category: Category.headphones,
         photos: [
-            "/pictures/headphones/50163928bb.webp",
-            "/pictures/headphones/50163928bb1.webp",
+            PRODUCT_IMAGES + "/headphones/50163928bb.webp",
+            PRODUCT_IMAGES + "/headphones/50163928bb1.webp",
         ],
         colors: [
             { label: "Белый", colorCode: "#ffffff" }
@@ -69,9 +70,9 @@ export const templateProducts: Array<Product> = [
         price: { value: 5999, currency: Currency.rouble },
         category: Category.joystick,
         photos: [
-            "/pictures/products/joystick/dualsense_ps5.webp",
-            "/pictures/products/dualsense_ps5(1).webp",
-            "/pictures/products/dualsense_ps5(2).webp",
+            PRODUCT_IMAGES + "/joystick/dualsense_ps5.webp",
+            PRODUCT_IMAGES + "/joystick/dualsense_ps5(1).webp",
+            PRODUCT_IMAGES + "/joystick/dualsense_ps5(2).webp",
         ],
         colors: [
             { label: "Белый", colorCode: "#ffffff" }
@@ -89,9 +90,9 @@ export const templateProducts: Array<Product> = [
         price: { value: 6899, currency: Currency.rouble },
         category: Category.keyboard,
         photos: [
-            "/pictures/keyboard/50049867b.webp",
-            "/pictures/keyboard/50049867b1.webp",
-            "/pictures/keyboard/50049867b2.webp"
+            PRODUCT_IMAGES + "/keyboard/50049867b.webp",
+            PRODUCT_IMAGES + "/keyboard/50049867b1.webp",
+            PRODUCT_IMAGES + "/keyboard/50049867b2.webp"
         ],
         colors: [
             { label: "Чёрный", colorCode: "#000000" }
@@ -109,9 +110,9 @@ export const templateProducts: Array<Product> = [
         price: { value: 13499, currency: Currency.rouble },
         category: Category.monitor,
         photos: [
-            "/pictures/monitor/30059510bb.webp",
-            "/pictures/monitor/30059510bb1.webp",
-            "/pictures/monitor/30059510bb2.webp"
+            PRODUCT_IMAGES + "/monitor/30059510bb.webp",
+            PRODUCT_IMAGES + "/monitor/30059510bb1.webp",
+            PRODUCT_IMAGES + "/monitor/30059510bb2.webp"
         ],
         colors: [
             { label: "Чёрный", colorCode: "#000000" }
@@ -129,9 +130,9 @@ export const templateProducts: Array<Product> = [
         price: { value: 80999, currency: Currency.rouble },
         category: Category.tablet,
         photos: [
-            "/pictures/tablet/30053003bb.webp",
-            "/pictures/tablet/30053003bb1.webp",
-            "/pictures/tablet/30053003bb7.webp"
+            PRODUCT_IMAGES + "/tablet/30053003bb.webp",
+            PRODUCT_IMAGES + "/tablet/30053003bb1.webp",
+            PRODUCT_IMAGES + "/tablet/30053003bb7.webp"
         ],
         colors: [
             { label: "Голубое небо", colorCode: "#65C8FF" },
