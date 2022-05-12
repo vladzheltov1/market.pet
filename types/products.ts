@@ -42,5 +42,6 @@ export type Product = {
     photos: Array<string>,
     price: Price,
     colors: Array<ProductColor>,
-    features: Array<ProductFeature>
+    features: Array<ProductFeature>,
+    discount?: number,
 }
