@@ -5,7 +5,8 @@
 }
 
 .product_tile {
-    display: grid;
+    display: flex;
+    justify-content: center;
     min-height: 400px;
     position: relative;
     border-radius: 1rem;
@@ -23,6 +24,7 @@
         margin-top: -30%;
         padding: 50px;
         z-index: 10;
+        width: 100%;
 
         img {
             object-fit: contain;
@@ -62,7 +64,7 @@
 
     .product_tile__picture{
         margin-top: -20%;
-        width: 80%;
+        width: 75%;
     }
 }
 
@@ -72,7 +74,7 @@
     }
     .product_tile__picture{
         margin-top: -20%;
-        width: 70%;
+        width: 60%;
     }
 }
 
