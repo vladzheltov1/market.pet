@@ -1,5 +1,6 @@
 import { Icon } from "@/components/UI/Icon";
 import { Wrapper } from "@/components/Wrapper";
+import { isClient } from "@/utils/ssr";
 import { faBars, faBasketShopping, faShop } from "@fortawesome/free-solid-svg-icons";
 import { FC, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
@@ -18,7 +19,7 @@ export const Header: FC = () => {
 
     const resizeHandler = () => {
         if (open) {
-            setOpen(false);
+            setOpen(!open);
         }
     }
 
@@ -31,6 +32,9 @@ export const Header: FC = () => {
     }, [])
 
     const collapseCondition = (): boolean => {
+        if (!isClient()) {
+            return false;
+        }
         return (open && (window.innerWidth <= HEADER_COLLAPSE_BREAK_POINT))
             || (window.innerWidth > HEADER_COLLAPSE_BREAK_POINT);
     }
@@ -45,18 +49,14 @@ export const Header: FC = () => {
                             <Icon icon={faBars} />
                         </Button>
                     </div>
-                    {collapseCondition() ? (
-                        <div className={headerStyles.header__collapse}>
-                            <HeaderSearch />
-                            <div className={headerStyles.header__link_group}>
-                                <HeaderLink href="/shop" icon={faShop}>Магазин</HeaderLink>
-                                <HeaderLink href="/cart" icon={faBasketShopping}>Корзина</HeaderLink>
-                            </div>
-                            <HeaderDropdown />
+                    <div className={`${headerStyles.header__collapse} ${collapseCondition() && headerStyles.header__collapse_open}`}>
+                        <HeaderSearch />
+                        <div className={headerStyles.header__link_group}>
+                            <HeaderLink href="/shop" icon={faShop}>Магазин</HeaderLink>
+                            <HeaderLink href="/cart" icon={faBasketShopping}>Корзина</HeaderLink>
                         </div>
-                    ) : (
-                        <div></div>
-                    )}
+                        <HeaderDropdown />
+                    </div>
                 </HeaderRow>
                 <HeaderRow className={headerStyles.header_bottom_row}>
                     <HeaderCategories />
