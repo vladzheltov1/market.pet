@@ -1,3 +1,6 @@
+@import "./mixins.scss";
+@import "./vars.scss";
+
 .header__dropdown{
     &>a,
     &>a:hover,
@@ -11,4 +14,12 @@
     &__item{
         font-size: 15px;
     }   
+}
+
+@media (max-width: $headerCollapseBreakPoint){
+    .header__dropdown{
+        @include collapseHeaderItems;
+        // justify-content: center;
+        // align-items: center;
+    }
 }

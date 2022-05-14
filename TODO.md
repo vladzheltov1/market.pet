@@ -2,7 +2,7 @@
 
 - Fill `purchases` database
 - Make filter at `/shop`
-- Add responsibility to header 
+- Add responsibility to header ---
 - Pages todo:
   - /product
   - /search
