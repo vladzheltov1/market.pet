@@ -1,4 +1,4 @@
-import { templateUsers } from "@/database/users";
+import { templateUsers } from "@/database/tables/users";
 import { FormResponse, LoginUserData, SignUpUserData } from "@/types/auth";
 import { User } from "@/types/user";
 import { findOne } from "@/utils/search";

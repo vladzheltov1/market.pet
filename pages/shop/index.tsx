@@ -1,5 +1,5 @@
 import { PageHead } from "@/components/PageHead";
-import { templateProducts } from "@/database/products";
+import { templateProducts } from "@/database/tables/products";
 import { Page } from "@/layouts/Page";
 import { Product } from "@/types/products";
 import { filterList } from "@/utils/search";
