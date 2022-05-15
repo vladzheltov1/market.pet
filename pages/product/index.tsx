@@ -1,10 +1,9 @@
+import { PageHead } from "@/components/PageHead";
 import { templateProducts } from "@/database/products";
 import { Page } from "@/layouts/Page";
 import { Product } from "@/types/products";
 import { redirect } from "@/utils/redirect";
 import { findOne } from "@/utils/search";
-import { assemblePageTitle } from "@/utils/title";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 
@@ -35,9 +34,7 @@ const ProductPage: FC = () => {
         <>  
             {product && (
                 <>
-                    <Head>
-                        <title>{assemblePageTitle(product.title)}</title>
-                    </Head>
+                    <PageHead title={product.title}/>
                     <Page>
                         {product.title}
                     </Page>

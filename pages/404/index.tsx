@@ -1,15 +1,12 @@
+import { PageHead } from "@/components/PageHead";
 import { Page } from "@/layouts/Page";
-import { assemblePageTitle } from "@/utils/title";
-import Head from "next/head";
 import { FC } from "react";
 import notFoundStyles from "./NotFound.module.scss";
 
 const NotFoundPage: FC = () => {
     return (
         <>
-            <Head>
-                <title>{assemblePageTitle("Страница не найдена")}</title>
-            </Head>
+            <PageHead title={"Страница не найдена"} />
             <Page>
                 <div className={notFoundStyles.not_found__container}>
                     <div className={notFoundStyles.not_found__code}>404!</div>

@@ -1,9 +1,8 @@
+import { PageHead } from "@/components/PageHead";
 import { templateProducts } from "@/database/products";
 import { Page } from "@/layouts/Page";
 import { Product } from "@/types/products";
 import { filterList } from "@/utils/search";
-import { assemblePageTitle } from "@/utils/title";
-import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
@@ -27,9 +26,7 @@ const Shop: FC = () => {
         <> 
             {products && (
                 <>
-                    <Head>
-                        <title>{assemblePageTitle("Магазин")}</title>
-                    </Head>
+                    <PageHead title="Магазин" />
                     <Page>
                         <div className={shopStyles.tile_wrapper}>
                             {products.map(product => (
