@@ -1,7 +1,7 @@
-import { templateUsers } from "@/database/users";
+import { select } from "@/database/api";
 import { FormResponse, LoginUserData, SignUpUserData } from "@/types/auth";
 import { User } from "@/types/user";
-import { findOne } from "@/utils/search";
+import { isEmptyArray } from "@/validators/array";
 import { useLocalStorage } from "./useLocalStorage";
 
 export const useAuth = () => {
@@ -11,7 +11,9 @@ export const useAuth = () => {
         const { email, password } = userData;
         const conditions = { email };
 
-        const candidate = findOne<User>(templateUsers, conditions);
+        const selection = select("USERS", conditions) as User[];
+
+        const candidate = !isEmptyArray(selection) ? selection[0] : null;
 
         if (!candidate) {
             return FormResponse.USER_NOT_FOUND;
@@ -34,7 +36,7 @@ export const useAuth = () => {
     const signUp = (userData: SignUpUserData): FormResponse => {
         const { email, password, passwordConfirm } = userData;
 
-        const alreadyExists = !!findOne<User>(templateUsers, { email });
+        const alreadyExists = !isEmptyArray(select("USERS", { email }));
 
         if (alreadyExists) {
             return FormResponse.ALREADY_EXISTS;

@@ -1,4 +1,4 @@
-import { templateProducts } from "@/database/products";
+import { templateProducts } from "@/database/tables/products";
 import { category_ru } from "@/dictionary/categories";
 import { AutoCompleteItem, Match } from "@/types/autoComplete";
 import { Product } from "@/types/products";
