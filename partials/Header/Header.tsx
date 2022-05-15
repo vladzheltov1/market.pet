@@ -16,19 +16,19 @@ const COLLAPSE_BREAK_POINT = 960;
 
 export const Header: FC = () => {
     const [open, setOpen] = useState<boolean>(false);
-
-    const handleResize = () => {
-        if (mustBeShown()) {
-            setOpen(false);
-        }
-    }
-
+    
     const mustBeShown = (): boolean => {
         if (!isClient()) {
             return false;
         }
-
+            
         return open && (window.innerWidth <= COLLAPSE_BREAK_POINT);
+    }
+    
+    const handleResize = () => {
+        if (!mustBeShown()) {
+            setOpen(false);
+        }
     }
 
     useEffect(() => {
