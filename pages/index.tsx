@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
                 <title>{assemblePageTitle("Добро пожаловать")}</title>
             </Head>
             <Page>
-                Главная страница
+                <div></div>
             </Page>
         </>
     )

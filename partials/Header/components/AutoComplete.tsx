@@ -27,19 +27,19 @@ export const AutoComplete: FC<IAutoCompleteProps> = (props) => {
 
     return (
         <>{shouldComponentRender() && (
-            <div className={headerStyles.auto_complete_container}>
+            <div className={headerStyles.header__search__auto_complete_container}>
                 {autoCompleteList.map((item, idx) => (
-                    <div key={idx} className={headerStyles.auto_complete_container__item}>
+                    <div key={idx}>
                         {item.match === Match.part && typeof item.value !== "string" && (
                             <Link href={assembleLink("/shop", {id: item.value.id})}>
-                                <a className={`${headerStyles.autoComplete_link} ${headerStyles.direct_link}`}>
+                                <a className={`${headerStyles.header__search__auto_complete_link} ${headerStyles.direct_link}`}>
                                     {item.value.title}
                                 </a>
                             </Link>
                         )}
                         {typeof item.value === "string" && (
                             <Link href={assembleLink("/search", {query: item.value})}>
-                                <a className={`${headerStyles.autoComplete_link}`}>
+                                <a className={`${headerStyles.header__search__auto_complete_link}`}>
                                     {item.value}
                                 </a>
                             </Link>

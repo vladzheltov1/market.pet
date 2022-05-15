@@ -1,0 +1,39 @@
+@import "./mixins.scss";
+@import "./vars.scss";
+
+.header__link_group{
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+
+    &>a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        &:hover{
+            color: var(--bs-dark);
+        }
+        
+        svg{
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+
+@media (max-width: $headerCollapseBreakPoint){
+    .header__link_group{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+        &>a{
+            @include collapseHeaderItems();
+            flex-direction: row;
+            gap: 5px;
+        }
+    }
+
+}

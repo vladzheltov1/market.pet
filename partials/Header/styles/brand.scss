@@ -1,0 +1,13 @@
+.header__brand,
+.header__brand>*{
+    font-size: 2.5rem;
+    display: block;
+    width: auto;
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+    color: var(--bs-dark) !important;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

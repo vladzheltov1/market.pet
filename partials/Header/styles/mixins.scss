@@ -1,0 +1,9 @@
+@import "./vars.scss";
+
+@mixin collapseHeaderItems {
+    width: 100%;
+    background-color: $headerCollapsedItemsBgColor;
+    padding: 5px 8px;
+    border-radius: 5px;
+    justify-content: flex-start;
+}

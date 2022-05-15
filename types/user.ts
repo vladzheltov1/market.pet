@@ -1,3 +1,5 @@
+import { Product } from "./products";
+
 export type UserID = number; 
 
 export enum UserRoles {
@@ -11,11 +13,11 @@ export type User = {
     id: UserID,
     firstName: string,
     lastName: string,
-    age: number,
     email: string,
-    login: string,
     password: string,
     joined: Date,
     role: UserRoles,
-    avatar: string
+    avatar: string,
+    wishList: Array<Product>,
+    cart: Array<Product>
 }

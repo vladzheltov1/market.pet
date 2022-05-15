@@ -1,0 +1,25 @@
+@import "./mixins.scss";
+@import "./vars.scss";
+
+.header__dropdown{
+    &>a,
+    &>a:hover,
+    &>a:active,
+    &>a:focus{
+        color: var(--bs-dark) !important;
+        font-size: 15px;
+        padding: 0;
+    }
+
+    &__item{
+        font-size: 15px;
+    }   
+}
+
+@media (max-width: $headerCollapseBreakPoint){
+    .header__dropdown{
+        @include collapseHeaderItems;
+        // justify-content: center;
+        // align-items: center;
+    }
+}
