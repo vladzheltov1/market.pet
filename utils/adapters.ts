@@ -8,5 +8,5 @@
  * @returns {string} normalized price to display
  */
 export const addSpacesToPrice = (priceValue: number): string => {
-    return priceValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "  ");
+    return priceValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
