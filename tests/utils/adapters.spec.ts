@@ -1,6 +1,6 @@
 // Testing: @/utils/adapters.ts
 
-import { addSpacesToPrice } from "../../utils/adapters";
+import { addSpacesToPrice } from "@/utils/adapters";
 
 describe("test utils/adapters", () => {
     it("should convert number to easily readable string with spaces every 3 symbols", () => {

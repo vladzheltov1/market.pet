@@ -1,4 +1,6 @@
-import { assembleLink } from "../../utils/redirect";
+// Testing: @/utils/redirect.ts
+
+import { assembleLink } from "@/utils/redirect";
 
 describe("must assemble url with the base url and the given props", () => {
     it("should add props to url properly", () => {
