@@ -9,6 +9,11 @@ export enum UserRoles {
     OWNER
 }
 
+export type CartItem = {
+    product: Product,
+    amount: number
+}
+
 export type User = {
     id: UserID,
     firstName: string,
@@ -19,5 +24,5 @@ export type User = {
     role: UserRoles,
     avatar: string,
     wishList: Array<Product>,
-    cart: Array<Product>
+    cart: Array<CartItem>
 }
