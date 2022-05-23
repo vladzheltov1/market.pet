@@ -16,10 +16,10 @@ const CartPage: FC = () => {
     const router = useRouter();
 
     useEffect(() => {
-        const storageData = localStore.get("user") as {id: number} | null;
-        const authUserId = storageData ? storageData["id"] : null; 
+        const storageData = localStore.get("user");
+        const authUserId = storageData ? JSON.parse(storageData.trim()) : null; 
 
-        console.log(storageData, authUserId)
+        console.log(typeof authUserId)
 
         if(!authUserId){
             redirect("/shop", router);
