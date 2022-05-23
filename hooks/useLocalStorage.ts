@@ -13,10 +13,9 @@ export const useLocalStorage = () => {
         }
     }
 
-    const get = (key: string): object | null => {
+    const get = (key: string): string | null => {
         if (isClient()) {
-            const data = localStorage.getItem(key);
-            return typeof data === "string" ? JSON.parse(data) : null;
+            return localStorage.getItem(key);
         }
 
         return null;
