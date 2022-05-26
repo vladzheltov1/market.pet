@@ -11,9 +11,12 @@ export const addSpacesToPrice = (priceValue: number): string => {
     return priceValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
-
 /**
  * Function that takes an object-like string and converts it to an actual object
+ * @example
+ * ```
+ * parseProperties('{"id": 5}') -> { id: 5 }
+ * ```
  * @param value 
  */
 export const parseProperties = (value: string): object => {
