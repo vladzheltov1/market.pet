@@ -25,5 +25,30 @@ export const parseProperties = (value: string): object => {
         return {};
     }
 
-    return JSON.parse(value);
+    let props = {};
+
+    const array = value.split(",");
+
+    for(let items in array){
+        props = Object.assign({...(normalize(items)), ...props})
+    }
+
+    return props;
+}
+
+const normalize = (string: string): string => {
+    let normalizedString = "{";
+
+    const serviceChars = ["{", "}", ","];
+
+    for(let i = 0; i < string.length; i++){
+        const char = string[i];
+        if(!serviceChars.includes(char)){
+            normalizedString += char;
+        }
+    }
+
+    normalizedString += "}";
+
+    return normalizedString;
 }

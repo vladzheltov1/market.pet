@@ -15,6 +15,8 @@ describe("test utils/adapters", () => {
 
     it("should counvert an object-like string to an actual string", () => {
         expect(parseProperties('{}')).toStrictEqual({});
+        expect(parseProperties('{ }')).toStrictEqual({});
+        expect(parseProperties('{  }')).toStrictEqual({});
         expect(parseProperties('{"id": 5}')).toStrictEqual({id: 5});
         expect(parseProperties('{id: 5}')).toStrictEqual({id: 5});
         expect(parseProperties('{id: 5, name: "name"}')).toStrictEqual({id: 5, name: "name"});
