@@ -20,35 +20,52 @@ export const addSpacesToPrice = (priceValue: number): string => {
  * @param value 
  */
 export const parseProperties = (value: string): object => {
-    // Early exit if the given string is not an object-like string
     if(value[0] !== "{" || value[value.length - 1] !== "}" || value.length === 0){
         return {};
     }
 
-    let props = {};
+    const tempArray = value.split(",");
 
-    const array = value.split(",");
+    let properties = {}; 
 
-    for(let items in array){
-        props = Object.assign({...(normalize(items)), ...props})
-    }
+    const serviceChars = ["{", "}", ":"]
 
-    return props;
-}
+    const excludeKey = [...serviceChars, '"', "'", "`", " "];
+    const excludeValue = [...serviceChars, '"', "'", "`", " "];
 
-const normalize = (string: string): string => {
-    let normalizedString = "{";
+    const normalize = (value: string, excludeList: Array<string>): string | number => {
+        let result = "";
 
-    const serviceChars = ["{", "}", ","];
-
-    for(let i = 0; i < string.length; i++){
-        const char = string[i];
-        if(!serviceChars.includes(char)){
-            normalizedString += char;
+        for(let char of value){
+            if(!excludeList.includes(char)){
+                result += char;
+            }
         }
+
+        if(excludeList === excludeValue){
+            if(!isNaN(Number(result))){
+                return Number(result);
+            }
+            return result;
+        }
+
+        return result;
     }
 
-    normalizedString += "}";
+    for(let item of tempArray){
+        const [key, value] = item.split(":");
 
-    return normalizedString;
+        if(!value){
+            return {};
+        }
+
+        const normalizedKey = normalize(key, excludeKey);
+        const normalizedValue = normalize(value, excludeValue);
+
+        // FIXME
+        // @ts-ignore
+        properties[normalizedKey] = normalizedValue;
+    }
+
+    return properties;
 }
