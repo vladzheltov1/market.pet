@@ -13,7 +13,7 @@ describe("test utils/adapters", () => {
         expect(addSpacesToPrice(0)).toBe("0");
     });
 
-    it("should counvert an object-like string to an actual string", () => {
+    it("should counvert an object-like string to an actual object", () => {
         expect(parseProperties('{}')).toStrictEqual({});
         expect(parseProperties('{ }')).toStrictEqual({});
         expect(parseProperties('{  }')).toStrictEqual({});
