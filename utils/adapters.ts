@@ -1,3 +1,6 @@
+import { OBJECT_PARSE_EXCLUDE_CHARS } from "@/constants/parsers";
+
+
 /**
  * Function that adds spaces every 3 symbols for better outlook
  * @example
@@ -11,6 +14,7 @@ export const addSpacesToPrice = (priceValue: number): string => {
     return priceValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
+
 /**
  * Function that takes an object-like string and converts it to an actual object
  * @example
@@ -20,52 +24,31 @@ export const addSpacesToPrice = (priceValue: number): string => {
  * @param value 
  */
 export const parseProperties = (value: string): object => {
+    // Early exit if the given string is not an object-like string
     if(value[0] !== "{" || value[value.length - 1] !== "}" || value.length === 0){
         return {};
     }
 
-    const tempArray = value.split(",");
+    // A helper function, that removes the exclude-chars from the given string 
+    const normalize = (value: string): string | number => {
+        const result = value.split("")
+                            .filter(char => !OBJECT_PARSE_EXCLUDE_CHARS.includes(char) && char)
+                            .join("");
 
+        // The result might be a number, so we need to convert it to type number 
+        return !isNaN(Number(result)) ? Number(result) : result;
+    }
+    
     let properties = {}; 
+    
+    // Iterating through the array of strings like "key: value" and parsing values and keys
+    value.split(",").forEach(keyValueString => {
+        const [key, value] = keyValueString.split(":");
 
-    const serviceChars = ["{", "}", ":"]
+        if(!value) return;
 
-    const excludeKey = [...serviceChars, '"', "'", "`", " "];
-    const excludeValue = [...serviceChars, '"', "'", "`", " "];
-
-    const normalize = (value: string, excludeList: Array<string>): string | number => {
-        let result = "";
-
-        for(let char of value){
-            if(!excludeList.includes(char)){
-                result += char;
-            }
-        }
-
-        if(excludeList === excludeValue){
-            if(!isNaN(Number(result))){
-                return Number(result);
-            }
-            return result;
-        }
-
-        return result;
-    }
-
-    for(let item of tempArray){
-        const [key, value] = item.split(":");
-
-        if(!value){
-            return {};
-        }
-
-        const normalizedKey = normalize(key, excludeKey);
-        const normalizedValue = normalize(value, excludeValue);
-
-        // FIXME
-        // @ts-ignore
-        properties[normalizedKey] = normalizedValue;
-    }
+        properties = Object.assign({...properties, [normalize(key)]: normalize(value)});
+    });
 
     return properties;
 }
