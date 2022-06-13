@@ -1,5 +1,5 @@
 import { USER_DEFAULT_AVATAR } from "@/constants/paths";
-import { User, UserRoles } from "@/types/user";
+import { User, UserRoles } from "@/shared/types/user";
 import { templateProducts } from "./products";
 
 export const templateUsers: Array<User> = [

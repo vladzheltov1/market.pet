@@ -1,3 +1,3 @@
-# Market.pet 
+# Market.pet
 
-A pet project of Online Market
+A pet project of an online market

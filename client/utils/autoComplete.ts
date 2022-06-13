@@ -1,7 +1,7 @@
 import { templateProducts } from "@/database/tables/products";
 import { category_ru } from "@/dictionary/categories";
-import { AutoCompleteItem, Match } from "@/types/autoComplete";
-import { Product } from "@/types/products";
+import { AutoCompleteItem, Match } from "@/shared/types/autoComplete";
+import { Product } from "@/shared/types/products";
 
 const makeAutoCompleteItem = (value: string | Product, match: Match): AutoCompleteItem => {
     return { value, match };

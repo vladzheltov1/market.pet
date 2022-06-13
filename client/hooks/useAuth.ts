@@ -1,6 +1,6 @@
 import { select } from "@/database/api";
-import { FormResponse, LoginUserData, SignUpUserData } from "@/types/auth";
-import { User } from "@/types/user";
+import { FormResponse, LoginUserData, SignUpUserData } from "@/shared/types/auth";
+import { User } from "@/shared/types/user";
 import { isEmptyArray } from "@/validators/array";
 import { useLocalStorage } from "./useLocalStorage";
 

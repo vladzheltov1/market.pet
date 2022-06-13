@@ -1,4 +1,4 @@
-import { SearchQuery } from "@/types/search";
+import { SearchQuery } from "@/shared/types/search";
 import { NextRouter } from "next/router";
 
 /**

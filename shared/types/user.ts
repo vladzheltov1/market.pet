@@ -1,4 +1,4 @@
-import { Product } from "./products";
+import { Product } from "@/shared/types/products";
 
 export type UserID = number; 
 

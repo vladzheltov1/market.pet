@@ -1,5 +1,5 @@
 import { PRODUCT_IMAGES } from "@/constants/paths";
-import { Category, Currency, Product } from "@/types/products";
+import { Category, Currency, Product } from "@/shared/types/products";
 
 export const templateProducts: Array<Product> = [
     {

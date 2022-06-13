@@ -23,12 +23,13 @@
       "@/hooks/*": ["./hooks/*"],
       "@/layouts/*": ["./layouts/*"],
       "@/partials/*": ["./partials/*"],
+      "@/shared/*": ["../shared/*"],
       "@/styles/*": ["./styles/*"],
       "@/types/*": ["./types/*"],
       "@/utils/*": ["./utils/*"],
       "@/validators/*": ["./validators/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "../shared/**/*.ts"],
   "exclude": ["node_modules"]
 }

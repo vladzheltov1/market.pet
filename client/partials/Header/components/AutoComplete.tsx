@@ -1,4 +1,4 @@
-import { AutoCompleteItem, Match } from "@/types/autoComplete";
+import { AutoCompleteItem, Match } from "@/shared/types/autoComplete";
 import { getAutoCompleteList } from "@/utils/autoComplete";
 import { assembleLink } from "@/utils/redirect";
 import Link from "next/link";

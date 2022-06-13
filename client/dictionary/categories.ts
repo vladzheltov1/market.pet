@@ -1,5 +1,5 @@
+import { Category } from "@/shared/types/products";
 import { Dictionary } from "@/types/dictionary";
-import { Category } from "@/types/products";
 
 export const category_ru: Dictionary<Category> = {
     phone: "Смартфоны",
