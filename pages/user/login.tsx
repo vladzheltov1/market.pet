@@ -1,11 +1,10 @@
+import { PageHead } from "@/components/PageHead";
 import { Wrapper } from "@/components/Wrapper";
 import { INCORRECT_EMAIL, REQUIRED } from "@/constants/form";
 import { useAuth } from "@/hooks/useAuth";
 import { Page } from "@/layouts/Page";
 import { FormResponse, LoginUserData } from "@/types/auth";
-import { assemblePageTitle } from "@/utils/title";
 import { Formik } from "formik";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
@@ -49,9 +48,7 @@ const Login: FC = () => {
 
     return (
         <>
-            <Head>
-                <title>{assemblePageTitle("Войти")}</title>
-            </Head>
+            <PageHead title="Войти" />
             <Page>
                 <Wrapper maxWidth={600}>
                     <Formik

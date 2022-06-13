@@ -1,9 +1,10 @@
-import { templateProducts } from "@/database/products";
+import { PageHead } from "@/components/PageHead";
+import { select } from "@/database/api";
+import { templateProducts } from "@/database/tables/products";
+import { FilterCondition } from "@/database/types/filter";
 import { Page } from "@/layouts/Page";
 import { Product } from "@/types/products";
-import { filterList } from "@/utils/search";
-import { assemblePageTitle } from "@/utils/title";
-import Head from "next/head";
+import { isEmptyArray } from "@/validators/array";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
@@ -16,20 +17,20 @@ const Shop: FC = () => {
     const router = useRouter();
 
     useEffect(() => {
-        const query = router.query;
+        const query = router.query as FilterCondition;
 
-        const filteredProducts = filterList<Product>(templateProducts, ((query as any) as keyof Product));
+        const filteredProducts = select("PRODUCTS", query);
 
-        setProducts(filteredProducts.length !== 0 ? filteredProducts : templateProducts);
-    }, [router.query])
+        const updatedState = isEmptyArray(filteredProducts) === false ? filteredProducts : templateProducts;
+
+        setProducts(updatedState as Array<Product>);
+    }, [router.query]);
 
     return (
         <> 
             {products && (
                 <>
-                    <Head>
-                        <title>{assemblePageTitle("Магазин")}</title>
-                    </Head>
+                    <PageHead title="Магазин" />
                     <Page>
                         <div className={shopStyles.tile_wrapper}>
                             {products.map(product => (

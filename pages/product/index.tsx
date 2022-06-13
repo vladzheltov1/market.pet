@@ -1,10 +1,9 @@
-import { templateProducts } from "@/database/products";
+import { PageHead } from "@/components/PageHead";
+import { select } from "@/database/api";
 import { Page } from "@/layouts/Page";
 import { Product } from "@/types/products";
 import { redirect } from "@/utils/redirect";
-import { findOne } from "@/utils/search";
-import { assemblePageTitle } from "@/utils/title";
-import Head from "next/head";
+import { isEmptyArray } from "@/validators/array";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 
@@ -22,22 +21,21 @@ const ProductPage: FC = () => {
             return;
         }
         
-        const productByQuery = findOne<Product>(templateProducts, {id: parseInt(productId)});
-        
-        if(!productByQuery){
+        const productsByQuery = select("PRODUCTS", {id: parseInt(productId)}) as Product[];
+    
+        if(isEmptyArray(productsByQuery)){
             redirect("/shop", router);
+            return;
         }
 
-        setProduct(productByQuery);
+        setProduct(productsByQuery[0]);
     }, [])
 
     return (
         <>  
             {product && (
                 <>
-                    <Head>
-                        <title>{assemblePageTitle(product.title)}</title>
-                    </Head>
+                    <PageHead title={product.title}/>
                     <Page>
                         {product.title}
                     </Page>

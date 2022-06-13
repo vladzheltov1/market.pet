@@ -1,5 +1,6 @@
 import { USER_DEFAULT_AVATAR } from "@/constants/paths";
 import { User, UserRoles } from "@/types/user";
+import { templateProducts } from "./products";
 
 export const templateUsers: Array<User> = [
     {
@@ -47,7 +48,14 @@ export const templateUsers: Array<User> = [
         joined: new Date(),
         role: UserRoles.USER,
         avatar: USER_DEFAULT_AVATAR,
-        wishList: [],
-        cart: []
+        wishList: [
+            templateProducts[1],          
+            templateProducts[2],          
+            templateProducts[3],          
+        ],
+        cart: [
+            {product: templateProducts[0], amount: 1},
+            {product: templateProducts[2], amount: 4},
+        ]
     }
 ];

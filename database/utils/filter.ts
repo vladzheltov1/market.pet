@@ -1,9 +1,9 @@
 /**
  * Function that finds and returns ALL fields, which keys match the condition
- * @param data data array of type `T` which containts the list to search in 
+ * @param data data array which containts the list to search in 
  * @param conditions an object of conditions
  */
-export const filterList = <T extends object>(data: Array<T>, conditions: object): Array<T> => {    
+export const filterList = (data: Array<object>, conditions: object): Array<object> | [] => {    
     return data.filter(item => {
         let fieldsMatch: boolean = true;
         Object.keys(conditions).map(key => {
@@ -21,9 +21,9 @@ export const filterList = <T extends object>(data: Array<T>, conditions: object)
 
 /**
  * Function that finds and returns ONE single field, which keys match the condition (if there's more than one, returns the first)  
- * @param {Array<T>} data array of type `T` which containts the list to search in 
+ * @param {Array<T>} data array which containts the list to search in 
  * @param {SearchCondition<T>} conditions is an object of conditions
  */
-export const findOne = <T extends object>(data: Array<T>, conditions: object): T | null => {
-    return filterList<T>(data, conditions)[0] || null;
+export const findOne = (data: Array<object>, conditions: object): object | null => {
+    return filterList(data, conditions)[0] || null;
 }
